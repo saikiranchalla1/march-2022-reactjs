@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from './Footer/Footer';
+import GreetUser from './GreetUser/GreetUser';
+import HeroTitle from './HeroTitle/HeroTitle';
+import Login from './Login/Login';
+import Notifications from './Notifications/Notifications';
+import StopWatch from './StopWatch/StopWatch';
 
 function App() {
+  // React.createElement(GreetUser, {user:"Sam"});
+  const notifications = {
+    count : 3
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Login/>
+      <Notifications data={notifications}/>
+      <HeroTitle>Sam</HeroTitle>
+      <GreetUser user="Sam"/> 
+      <Footer/>
+      <StopWatch/>
+    </>
   );
 }
 
